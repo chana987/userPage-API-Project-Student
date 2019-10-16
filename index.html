@@ -12,7 +12,69 @@
 </head>
 
 <body>
+    <div class="container">	
+        <div class="user-container"></div>	
+        <div class="quote-container"></div>	
+        <div class="content-container"></div>	
+        <div class="friends">	
+            <h4>Friends</h4>	
+            <div class="friends-container">	
+            </div>	
+        </div>	
+        <div class="buttons">	
+            <button id="load-data">Load User Data</button>	
+            <button id="display-user">Display User</button>	
+        </div>	
+    </div>
 
+    <script id="template-user" type="text/x-handlebars-template">
+        
+        <div class="user-info">
+            <img src="{{picture.thumbnail}}" alt="" id="profile-pic">
+            <h2>{{name.first}} {{name.last}}</h2>
+            <h2>{{location.city}}, {{location.state}}</h2>
+        </div>
+    </script>
+
+    <script id="template-quote" type="text/x-handlebars-template">
+        <h3>Favorite quote</h3>
+        <p>"{{quote}}"</p>
+        <p> - Kanye West</p>
+    </script>
+
+    <script id="template-pokemon" type="text/x-handlebars-template">
+        <div class="pokemon-container">
+            <img src="{{url}}" alt="" id="pokemon-image">
+            <h2 id="pokemon-text">Favorite Pokemon: {{name}}</h2>
+        </div>
+    </script>
+
+    <script id="template-meat" type="text/x-handlebars-template">
+        <div class="meat-container">
+            <p>About me:</p>
+            {{#each meatText}}
+            <p class="meat-text">{{this}}</p>
+            {{/each}}
+        </div>
+    </script>
+
+    <script id="template-friends" type="text/x-handlebars-template">
+        <ul>
+            {{#each friends}}
+            <li>{{this.name.first}} {{this.name.last}}</li>
+            {{/each}}
+        </ul>
+    </script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js"></script>
+    <script src="APIManager.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

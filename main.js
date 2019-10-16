@@ -1,2 +1,10 @@
-// Create instances of your classes
-// Create the loadData and renderData functions - these should use the relevant instance
+const API = new APIManager
+const renderer = new Renderer
+
+API.loadData()
+$("#load-data").on("click", function() {
+})
+
+$("#display-user").on("click", function() {
+  renderer.render(API.data)
+})
