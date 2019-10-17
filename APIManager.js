@@ -28,9 +28,9 @@ class APIManager {
         })
         $.ajax({
             method: "GET",
-            url: `https://pokeapi.co/api/v2/pokemon-species/?limit=807`,
+            url: `https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 807)}/`,
             success: (data) => {
-                this.data["pokemonInfo"] = data.results
+                this.data["pokemonInfo"] = data
             },
             error: function(xhr, text, error) {
                 console.log(text)

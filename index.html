@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>API Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 
@@ -24,36 +24,38 @@
         <div class="buttons">	
             <button id="load-data">Load User Data</button>	
             <button id="display-user">Display User</button>	
+            <button id="save-user">Save User</button>	
+            <button id="load-user">Load User</button>	
+            <select id="saved-users">Select name</select>
         </div>	
     </div>
 
     <script id="template-user" type="text/x-handlebars-template">
-        
+        <img src="{{picture.thumbnail}}" alt="" id="profile-pic">
         <div class="user-info">
-            <img src="{{picture.thumbnail}}" alt="" id="profile-pic">
-            <h2>{{name.first}} {{name.last}}</h2>
-            <h2>{{location.city}}, {{location.state}}</h2>
+            <h3 class="name">{{name.first}} {{name.last}}</h3>
+            <h3>{{location.city}}, {{location.state}}</h3>
         </div>
     </script>
 
     <script id="template-quote" type="text/x-handlebars-template">
-        <h3>Favorite quote</h3>
-        <p>"{{quote}}"</p>
-        <p> - Kanye West</p>
+        <p>Favorite quote:</p>
+        <h3>"{{quote}}"</h3>
+        <h3> - Kanye West</h3>
     </script>
 
     <script id="template-pokemon" type="text/x-handlebars-template">
         <div class="pokemon-container">
-            <img src="{{url}}" alt="" id="pokemon-image">
-            <h2 id="pokemon-text">Favorite Pokemon: {{name}}</h2>
+            <img src="{{sprites.front_default}}" alt="" id="pokemon-image">
+            <h3 id="pokemon-text">Favorite Pokemon: {{name}}</h3>
         </div>
     </script>
 
     <script id="template-meat" type="text/x-handlebars-template">
-        <div class="meat-container">
+        <div class="meat-container meat-text">
             <p>About me:</p>
             {{#each meatText}}
-            <p class="meat-text">{{this}}</p>
+            <p >{{this}}</p>
             {{/each}}
         </div>
     </script>
@@ -64,6 +66,10 @@
             <li>{{this.name.first}} {{this.name.last}}</li>
             {{/each}}
         </ul>
+    </script>
+
+    <script id="template-saved-users" type="text/x-handlebars-template">
+        <option value="{{this.name.first}}{{this.name.last}}">{{this.name.first}} {{this.name.last}}</option>
     </script>
 
     <script

@@ -6,7 +6,7 @@
 
 body {
     background-color: #ecf0f1;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -53,8 +53,8 @@ body {
 }
 
 .quote-container>p {
-    font-family: 'Nunito', sans-serif;
-    font-size: 1vmax;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3vmax;
 }
 
 .content-container {
@@ -73,10 +73,12 @@ body {
     color: #ecf0f1;
     border-top-left-radius: 4px;
     box-shadow: -1px -1px 3px black;
-    padding-left: 1vmax;
+    padding: 2vmax;
+    line-height: 3vmax;
 }
 
 ul {
+    font-size: 1.2vmax;
     list-style-type: none;
 }
 
@@ -124,5 +126,5 @@ button {
 
 .meat-text {
     padding: 1vw;
-    font-size: 1vmax;
+    font-size: 1.3vmax;
 }
